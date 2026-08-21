@@ -1,0 +1,30 @@
+:root {
+  --hero-bg: #f4f0e8;
+  --hero-text: #1a1a1a;
+
+  font-family: 'Thasadith', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--hero-text);
+  background: var(--hero-bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

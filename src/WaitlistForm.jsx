@@ -76,6 +76,12 @@ function WaitlistForm({
         body: formData.toString(),
       })
 
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-11090977979/zHBQCLz91OUcELvJy6gp',
+        })
+      }
+
       setEmail('')
       setHoneypot('')
       setStatus('success')
@@ -117,6 +123,7 @@ function WaitlistForm({
             Thank you. I’ll send honest updates as Enough develops.
           </p>
         </div>
+
         <button
           type="button"
           className="waitlist__reset"
@@ -146,6 +153,7 @@ function WaitlistForm({
       <label className="content__label" htmlFor={emailId}>
         Email
       </label>
+
       <input
         ref={emailRef}
         id={emailId}
@@ -157,8 +165,10 @@ function WaitlistForm({
         value={email}
         onChange={(event) => {
           setEmail(event.target.value)
+
           if (errorMessage) {
             setErrorMessage('')
+
             if (status === 'error') {
               setStatus('idle')
             }
@@ -171,6 +181,7 @@ function WaitlistForm({
 
       <div className="honeypot">
         <label htmlFor={honeypotId}>Website</label>
+
         <input
           id={honeypotId}
           name="website"
@@ -213,10 +224,12 @@ function WaitlistForm({
           ? 'No payment. No preorder.'
           : 'No payment. No preorder. Just honest updates as Enough develops.'}
       </p>
+
       <p id={consentId} className="content__consent">
         By joining, you agree to receive occasional email updates about Enough.
         You can unsubscribe at any time.
       </p>
+
       <p className="waitlist__privacy">
         <a href={privacyHref()}>Privacy</a>
       </p>
